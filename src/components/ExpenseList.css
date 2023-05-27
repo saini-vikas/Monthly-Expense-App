@@ -1,0 +1,12 @@
+.expense-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 500px;
+    padding: 25px; 
+}
