@@ -1,19 +1,26 @@
-const sqlite3 = require("sqlite3").verbose();
+const express = require("express");
+const db = require("./database");
+const cors = require("cors");
+const app = express();
 
-const DB_FILE_PATH = "./expense.db"; // Path to the SQLite database file
+app.use(
+  cors({
+    origin: "https://localhost:8000",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
-const db = new sqlite3.Database(DB_FILE_PATH, (err) => {
-  if (err) {
-    console.error("Database connection error:", err.message);
-  } else {
-    console.log("Connected to the SQLite database");
-  }
+app.get("/api/data", (req, res) => {
+  db.all("SELECT * FROM expenses", (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Internal Server Error");
+    } else {
+      res.json(rows);
+    }
+  });
 });
 
-db.serialize(() => {
-  db.run(
-    "CREATE TABLE IF NOT EXISTS expenses (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, amount REAL NOT NULL, category TEXT NOT NULL, date TEXT NOT NULL)"
-  );
+app.listen(8000, () => {
+  console.log("Server is running on port 8000");
 });
-
-module.exports = db;

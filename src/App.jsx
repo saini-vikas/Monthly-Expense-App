@@ -1,33 +1,29 @@
 import "./App.css";
+import {useState, useEffect} from "react";
 import ExpenseDetail from "./components/containers/ExpenseDetail";
 import AddContainer from "./components/containers/AddContainer";
 
 
 function App() {
-  const expenses= [
-    {
-      title: "Grocery",
-      date: new Date(2022, 11, 12),
-      amount: 289.56,
-    } ,
-    {
-      title: "Insurance",
-      date: new Date(2021, 8, 5),
-      amount: 439.61,
-    },
-    {
-      title: "Coffee",
-      date: new Date(2021, 4, 25),
-      amount: 39.61,
-    }
-  ]
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/data').then(
+      response => {
+        return response.json();
+      }).then( data => {
+        setData(data);
+      });
+  }, []);
+
   return (
     <div className="App container">
       <div className="title-heading">
         <h3>Expense Tracker</h3>
+        <p>{data.title}</p>
       </div>
       <AddContainer/>
-      <ExpenseDetail expenses={expenses}/>
+      <ExpenseDetail expenses={data}/>
     </div>
   );
 }

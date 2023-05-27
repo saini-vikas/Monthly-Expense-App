@@ -2,8 +2,10 @@ import "./ExpenseItem.css"
 
 
 const ExpenseItem = (props) => {
-    const month = props.expense.date.toLocaleString("en-US", {month: "long"});
-    const day = props.expense.date.toLocaleString("en-US", {day: "numeric"});
+    const date = new Date(props.expense.date);
+    const month = date.toLocaleString("en-US", {month: "long"});
+    const day = date.getDate() + 1;
+    
     return (
         <div className="expense-item">
             <div className="date">
