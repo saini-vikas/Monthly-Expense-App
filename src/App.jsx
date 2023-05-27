@@ -1,6 +1,6 @@
 import "./App.css";
 import ExpenseList from "./components/ExpenseList";
-
+import YearExpense from "./components/YearExpense";
 
 
 function App() {
@@ -24,7 +24,10 @@ function App() {
   return (
     <div className="App container">
       <h1>Expense Tracker</h1>
+      <YearExpense/>
       <ExpenseList expenses={expenses}/>
+      
+
     </div>
   );
 }
