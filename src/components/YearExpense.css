@@ -1,7 +1,6 @@
-
-
 .year-expense {
-    width: 20%;
-    aspect-ratio: 1/1;
-    background-color: #ffffff;
+    width: 100%;
+    background-color: #303030;
+    color: white;
+    border-radius: 10px; 
 }

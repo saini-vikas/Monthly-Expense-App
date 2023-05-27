@@ -1,0 +1,24 @@
+.expense-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    width: 98%;
+    height: 50%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+.year-summary {
+    display: flex;
+    flex: 27%;
+    height: 95%;
+}
+
+.complete-expense-list {
+    display: flex;
+    flex: 70%;
+    height: 95%;
+}

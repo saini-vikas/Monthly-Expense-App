@@ -4,9 +4,9 @@
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    width: 90%;
-    background-color: #ffffff;
+    width: 100%;
+    background-color: #f8f8f8;
     border-radius: 10px;
-    height: 500px;
-    padding: 25px; 
+    height: 100%;
+    padding: 20px; 
 }
