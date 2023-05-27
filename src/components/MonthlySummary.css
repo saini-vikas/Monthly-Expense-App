@@ -1,0 +1,10 @@
+.monthly-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 60%;
+    height: 90%;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+}

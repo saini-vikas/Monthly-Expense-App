@@ -1,9 +1,6 @@
 import "./App.css";
-import ExpenseDetail from "./components/ExpenseDetail";
-import AddExpense from "./components/AddExpense";
-import MonthlySummary from "./components/MonthlySummary";
-
-
+import ExpenseDetail from "./components/containers/ExpenseDetail";
+import AddContainer from "./components/containers/AddContainer";
 
 
 function App() {
@@ -26,9 +23,10 @@ function App() {
   ]
   return (
     <div className="App container">
-      <h1>Expense Tracker</h1>
-      <MonthlySummary/>
-      <AddExpense/>
+      <div className="title-heading">
+        <h3>Expense Tracker</h3>
+      </div>
+      <AddContainer/>
       <ExpenseDetail expenses={expenses}/>
     </div>
   );

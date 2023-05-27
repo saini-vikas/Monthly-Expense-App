@@ -1,6 +1,6 @@
 import "./ExpenseDetail.css"
-import YearExpense from "./YearExpense";
-import ExpenseList from  "./ExpenseList.jsx"
+import YearExpense from "../YearExpense";
+import ExpenseList from  "../ExpenseList.jsx"
 
 
 const ExpenseDetail = (props) => {

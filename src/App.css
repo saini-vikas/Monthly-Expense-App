@@ -1,9 +1,18 @@
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     height: 100vh;
-    align-items: center;
+    align-items: center !important;
     background-color: #f8f8f8f8;
+    padding: 20px 0 20px 0;
+}
+
+.title-heading {
+    display: flex;
+    flex: 100%;
+    justify-content: center;
 }
