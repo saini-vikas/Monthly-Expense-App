@@ -1,9 +1,19 @@
 .add-expense {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex: 35%;
     height: 90%;
     border-radius: 10px;
     background-color: #ffffff;
+    padding: 20px;
+}
+
+.row {
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
 }
