@@ -18,6 +18,10 @@
 
 .complete-expense-list {
     display: flex;
+    flex-direction: column;
     flex: 70%;
+    border-radius: 10px;
+    background-color: #ffffff;
     
 }
+

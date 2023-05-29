@@ -3,11 +3,11 @@ import MonthlySummary from "../MonthlySummary";
 import AddExpense from "../AddExpense";
 
 
-const AddContainer = () => {
+const AddContainer = (props) => {
     return (
         <div className="add-container">
             <MonthlySummary/>
-            <AddExpense/>
+            <AddExpense onAddExpense={props.onAddExpense}/>
         </div>
     )
 }

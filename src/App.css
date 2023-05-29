@@ -13,6 +13,21 @@
 
 .title-heading {
     display: flex;
+    flex-direction: column;
     flex: 100%;
     justify-content: center;
+    align-items: center;
+}
+
+.filter-by-year {
+    display: flex;
+    width: 98%;
+    justify-content: flex-end;
+    gap: 80px;
+    align-items: center;
+}
+
+.filter-by-year > select {
+    width: 15%;
+    height: 1.8em;
 }

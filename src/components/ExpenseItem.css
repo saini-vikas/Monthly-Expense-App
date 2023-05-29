@@ -5,6 +5,7 @@
     align-items: center;
     width: 95%;
     min-height: 70px;
+    max-height: 70px;
     flex-grow: 1;
     height: 70px !important;
     padding-left: 25px;
