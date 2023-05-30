@@ -12,7 +12,12 @@
 
 .year-summary {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 30%;
+    height: 400px;
+    background-color: #303030;
+    border-radius: 10px;
 
 }
 

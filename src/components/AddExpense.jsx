@@ -79,6 +79,7 @@ const AddExpense = (props) => {
                 <datalist id="datalistOptions">
                     <option value="Grocery"/>
                     <option value="Transportation"/>
+                    <option value="Entertainment"/>
                     <option value="Shopping"/>
                     <option value="Housing"/>
                     <option value="Insurance"/>
