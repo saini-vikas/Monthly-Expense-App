@@ -42,6 +42,21 @@ app.post("/api/submit-form", (req, res) => {
   });
 });
 
+app.delete("/api/delete-expense", (req, res) => {
+  const exp = req.body;
+  console.log(exp.e);
+  const query = "DELETE FROM expenses WHERE id= ? AND title = ? AND date = ?";
+  db.run(query, [exp.e.id, exp.e.title, exp.e.date], (err) => {
+    if (err) {
+      res.status(500).send({ message: "Error deleting expense" });
+    } else {
+      res.status(200).send({
+        message: "Successfully deleted expense with tilte: " + exp.e.title,
+      });
+    }
+  });
+});
+
 app.listen(8000, () => {
   console.log("Server is running on port 8000");
 });

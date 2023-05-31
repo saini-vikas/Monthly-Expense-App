@@ -73,7 +73,6 @@ const MonthlySummary = (props) => {
         return m.category.Insurance;
     });
 
-    console.log(monthlyTransportation);
 
     const labels = monthlyData.map(data => {
         return data.label;
