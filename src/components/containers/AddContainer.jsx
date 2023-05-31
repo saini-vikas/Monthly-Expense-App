@@ -6,7 +6,7 @@ import AddExpense from "../AddExpense";
 const AddContainer = (props) => {
     return (
         <div className="add-container">
-            <MonthlySummary/>
+            <MonthlySummary expenses={props.expenses} selectYear={props.selectYear}/>
             <AddExpense onAddExpense={props.onAddExpense}/>
         </div>
     )

@@ -40,7 +40,7 @@ function App() {
             </select>
         </div>
       </div>
-      <AddContainer onAddExpense={fetchDataFromDatabase}/>
+      <AddContainer onAddExpense={fetchDataFromDatabase} expenses={data} selectYear={selectYear} />
       <ExpenseDetail expenses={data} selectYear={selectYear}/>
     </div>
   );

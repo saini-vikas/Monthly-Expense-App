@@ -20,7 +20,6 @@ const YearExpense = (props) => {
     "Entertainment" : 0, "Housing" : 0, 
     "Utilities": 0, "Insurance":0};
    
-    console.log(filterExpenses);
 
     filterExpenses.forEach(expense => {
     const { category, amount } = expense;
@@ -32,34 +31,51 @@ const YearExpense = (props) => {
     }
     });
 
-  
-    console.log(Object.keys(categoryTotals));
-    console.log(Object.values(categoryTotals));
 
     const data = {
         labels: Object.keys(categoryTotals),
-        labelsColor: 'white',
         datasets: [
           {
             label: " Total",
             data: Object.values(categoryTotals),
+            borderColor: 'transparent',
             backgroundColor: [
-              'rgba(255, 99, 132 )',
-              'rgba(54, 162, 235 )',
-              'rgba(255, 206, 86)',
-              'rgba(75, 192, 192)',
-              'rgba(153, 102, 255)',
-              'rgba(255, 159, 64)',
-              '#9CFF2E'
-            ],
-            
+              '#2192FF',
+              '#4EF037',
+              '#ED2B2A',
+              '#7149C6',
+              '#40DFEF',
+              '#F94892',
+              '#FFEA20'
+            ],         
           },
         ],
-      };
+    };
+    const options = {
+      plugins : {
+        title: {
+          display: true,
+            text: 'Anual Summary ' + props.selectYear,
+            color: "white"
+        },
+        legend: {
+          position: "bottom",
+          labels: {
+            boxWidth: 10,
+            padding: 15,
+            color: 'white', 
+            font: {
+              size: 10
+            },
+          },
+      },
+      }
+      
+  };
     return (
         <div className="year-expense">
           
-            <Doughnut data={data}/>
+            <Doughnut data={data} options={options}/>
         </div>
     );
 }

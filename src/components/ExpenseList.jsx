@@ -11,7 +11,7 @@ const ExpenseList = (props) => {
     return (
         <div className="expense-list">
             
-            {filterExpenses.map((expense, index) => (
+            { filterExpenses.length === 0 ? <h5>No expense found!</h5> : filterExpenses.map((expense, index) => (
                 <ExpenseItem key={index} expense={expense}/>
             ))
             }

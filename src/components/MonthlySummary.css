@@ -1,11 +1,12 @@
 .monthly-summary {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex: 60%;
     height: 90%;
-    background-color: #ffffff;
+    width: 95% !important;
     border-radius: 10px;
-    background-color: #9CFF2E;
+    background-color: #303030;
+    padding: 0 20px 0 20px;
 
 }
