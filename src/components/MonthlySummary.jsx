@@ -138,7 +138,7 @@ const MonthlySummary = (props) => {
             },
             {label: 'Grocery',
             data: monthlyGrocery,
-            backgroundColor: '#ED2B2A',
+            backgroundColor: '#FF6464',
             
             },
             {label: 'Entertainment',
@@ -153,7 +153,7 @@ const MonthlySummary = (props) => {
             },
             {label: 'Utilities' ,
             data: monthlyUtilities,
-            backgroundColor: '#F94892',
+            backgroundColor: '#FF74B1',
             
             },
             {label: 'Insurance',

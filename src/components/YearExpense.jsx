@@ -42,10 +42,10 @@ const YearExpense = (props) => {
             backgroundColor: [
               '#2192FF',
               '#4EF037',
-              '#ED2B2A',
+              '#FF6464',
               '#7149C6',
               '#40DFEF',
-              '#F94892',
+              '#FF74B1',
               '#FFEA20'
             ],         
           },
