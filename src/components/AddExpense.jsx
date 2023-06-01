@@ -1,5 +1,5 @@
 import "./AddExpense.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const AddExpense = (props) => {
@@ -7,22 +7,68 @@ const AddExpense = (props) => {
     const [enteredAmount, setEnteredAmount] = useState("");
     const [enteredDate, setEnteredDate] = useState("");
     const [enteredCategory, setEnteredCategory] = useState("");
+    const [id, setId] = useState(null);
+    
+
+    useEffect(() =>{
+        if(props.expenseToEdit) {
+            setEnteredTitle(props.expenseToEdit.title);
+            setEnteredCategory(props.expenseToEdit.category);
+            setEnteredAmount(props.expenseToEdit.amount);
+            setEnteredDate(props.expenseToEdit.date);
+            setId(props.expenseToEdit.id);
+        }
+
+    }, [props.expenseToEdit])
+
 
     const handleTitleChange = (event) => {
         setEnteredTitle(event.target.value);
-        console.log(event.target.value);
+        
     };
     const handleAmountChange = (event) => {
         setEnteredAmount(event.target.value);
-        console.log(event.target.value);
+      
     };
     const handleDateChange = (event) => {
         setEnteredDate(event.target.value);
-        console.log(event.target.value);
+        
     };
     const handleCategoryChange = (event) => {
         setEnteredCategory(event.target.value);
-        console.log(event.target.value);
+        
+    };
+
+    const cancelEditExpense = (event) => {
+        setEnteredAmount("");
+        setEnteredCategory("");
+        setEnteredDate("");
+        setEnteredTitle("");
+        setId(null);
+    };
+
+    const updateSelectedExpense = (event) => {
+        event.preventDefault();
+        try {
+            fetch('/api/update-expense', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify({id, enteredTitle, enteredAmount,  enteredCategory,  enteredDate})
+            }).then(res => res.json())
+            .then(data => {
+                alert(data.message)
+                props.onAddExpense()
+            });
+            console.log("Success");
+            setEnteredAmount("");
+            setEnteredCategory("");
+            setEnteredDate("");
+            setEnteredTitle("");
+            setId(null);
+        }
+        catch (err) {
+            console.log(err);
+        }
     };
 
     const handleSubmit = async (event) => {
@@ -34,9 +80,11 @@ const AddExpense = (props) => {
                 'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({enteredTitle, enteredAmount,  enteredCategory,  enteredDate})
-            }).then(
+            }).then(res => res.json())
+            .then(data => {
+                alert(data.message)
                 props.onAddExpense()
-            )
+            });
             // Form data successfully sent to the backend
             // You can perform any additional actions here, like showing a success message
             console.log("Success");
@@ -52,7 +100,7 @@ const AddExpense = (props) => {
 
     return (
         <div className="add-expense">
-            <form className="row" onSubmit={handleSubmit}>
+            <form className="row">
                 <div className="col-4 mb-2">
                     <label htmlFor="title"  className="col-form-label">Title: </label>
                 </div>
@@ -87,7 +135,9 @@ const AddExpense = (props) => {
                 </datalist>
                 </div>
                 <div className="col-10 button">
-                <button className="btn btn-dark" type="submit">Add new expense</button>
+                    { id ?  (<><button className="btn btn-dark" onClick={updateSelectedExpense}>Update expense</button>
+                            <button className="btn btn-dark" onClick={cancelEditExpense}>Cancel</button></> ) :
+                    <button className="btn btn-dark" onClick={handleSubmit} type="submit">Add new expense</button>}
                 </div>
                 
                 

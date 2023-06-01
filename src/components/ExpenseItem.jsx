@@ -8,6 +8,11 @@ const ExpenseItem = (props) => {
     const day = date.getDate() + 1;
     const year = date.getFullYear();
 
+
+    const editExpense = (expense) => {
+        props.onEditExpense(expense)
+    }
+
     const removeExpenses = (e) => {
         console.log(e);
         try {
@@ -17,9 +22,11 @@ const ExpenseItem = (props) => {
                 'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({e})
-            }).then(
+            }).then(res => res.json())
+            .then(data => {
+                alert(data.message)
                 props.onUpdateExpense()
-            )
+            });
         }
         catch (err) {
             console.error(err);
@@ -45,7 +52,7 @@ const ExpenseItem = (props) => {
             <div className="edits">
                 <hr />
                 <div className="icons">
-                    <i className="bi bi-pencil-square" style={{color: '#9CFF2E', fontSize: '14'}}></i>
+                    <i className="bi bi-pencil-square" onClick={() => editExpense(props.expense)} style={{color: '#9CFF2E', fontSize: '14'}}></i>
                     <i className="bi bi-trash-fill" onClick={() => removeExpenses(props.expense)} style={{color: "#F45050", fontSize: '14'}}></i>
                 </div>
                 

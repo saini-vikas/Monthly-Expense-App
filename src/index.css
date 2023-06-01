@@ -1,4 +1,6 @@
 
-body {
+#root {
     background-color: #ffffff;
+    display: flex;
+    justify-content: center;
 }

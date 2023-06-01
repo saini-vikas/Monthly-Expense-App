@@ -7,7 +7,7 @@ const AddContainer = (props) => {
     return (
         <div className="add-container">
             <MonthlySummary expenses={props.expenses} selectYear={props.selectYear}/>
-            <AddExpense onAddExpense={props.onAddExpense}/>
+            <AddExpense onAddExpense={props.onAddExpense} expenseToEdit={props.expenseToEdit}/>
         </div>
     )
 }

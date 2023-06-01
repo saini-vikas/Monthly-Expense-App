@@ -1,10 +1,11 @@
 
-.container {
+.app-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    width: 70%;
     height: 100vh;
     align-items: center !important;
     background-color: #f8f8f8f8;
@@ -19,15 +20,35 @@
     align-items: center;
 }
 
+.title-heading > h3 {
+    align-self: flex-start;
+    margin-left: 40px; 
+}
+
 .filter-by-year {
     display: flex;
     width: 98%;
     justify-content: flex-end;
-    gap: 80px;
+    gap: 50px;
     align-items: center;
 }
 
 .filter-by-year > select {
     width: 15%;
     height: 1.8em;
+}
+
+
+
+@media  screen and (max-width: 1400px) {
+    .app-container {
+        width: 98vw !important;
+    }    
+}
+
+
+@media screen and (max-width: 800px){
+    .app-container {
+        width: 100%;
+    }
 }

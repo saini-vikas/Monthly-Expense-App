@@ -12,7 +12,7 @@ const ExpenseDetail = (props) => {
             </div>
             <div className="complete-expense-list">
                 
-                <ExpenseList onUpdateExpense={props.onAddExpense} expenses={props.expenses} selectYear={props.selectYear}/>
+                <ExpenseList onEditExpense={props.onEditExpense} onUpdateExpense={props.onAddExpense} expenses={props.expenses} selectYear={props.selectYear}/>
             </div>
         </div>
     )

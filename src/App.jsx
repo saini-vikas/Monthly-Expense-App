@@ -7,8 +7,14 @@ import AddContainer from "./components/containers/AddContainer";
 function App() {
   const [data, setData] = useState([]);
   const [selectYear, setSelectYear] = useState(2023);
+  const [editExpenseContent, setEditExpenseContent] = useState(null);
   const years = [2023, 2022, 2021, 2020, 2019];
 
+
+
+  const editExpense = (expense) => {
+    setEditExpenseContent(expense);
+  }
 
   const handleYearChange = (event) => {
     setSelectYear(event.target.value)
@@ -28,7 +34,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App container">
+    <div className="app-container">
       <div className="title-heading">
         <h3>Expense Tracker</h3>
         <div className="filter-by-year">
@@ -40,8 +46,8 @@ function App() {
             </select>
         </div>
       </div>
-      <AddContainer onAddExpense={fetchDataFromDatabase} expenses={data} selectYear={selectYear} />
-      <ExpenseDetail onAddExpense={fetchDataFromDatabase} expenses={data} selectYear={selectYear}/>
+      <AddContainer onAddExpense={fetchDataFromDatabase} expenseToEdit={editExpenseContent} expenses={data} selectYear={selectYear} />
+      <ExpenseDetail onEditExpense={editExpense} onAddExpense={fetchDataFromDatabase} expenses={data} selectYear={selectYear}/>
     </div>
   );
 }

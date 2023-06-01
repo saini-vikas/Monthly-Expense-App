@@ -12,7 +12,7 @@ const ExpenseList = (props) => {
         <div className="expense-list">
             
             { filterExpenses.length === 0 ? <h5>No expense found!</h5> : filterExpenses.map((expense, index) => (
-                <ExpenseItem key={index} onUpdateExpense={props.onUpdateExpense} expense={expense}/>
+                <ExpenseItem key={index} onEditExpense={props.onEditExpense} onUpdateExpense={props.onUpdateExpense} expense={expense}/>
             ))
             }
         </div>
