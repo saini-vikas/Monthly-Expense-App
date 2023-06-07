@@ -21,6 +21,8 @@
 
 .button {
     display: flex;
+    flex-direction: row;
+    gap: 20px;
     justify-content: flex-end;
     
 }
@@ -35,5 +37,15 @@
 @media screen and (max-width: 850px) {
     .add-expense {
         margin: 0 20px 0 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .add-expense {
+        margin: 5px;
+    }
+    .button button {
+        margin-top: 20px;
+        width: 100% !important;
     }
 }

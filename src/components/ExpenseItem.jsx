@@ -45,7 +45,7 @@ const ExpenseItem = (props) => {
                     <h2>{props.expense.title}</h2>
                 </div>
                 <div className="amount">
-                    <h1>${props.expense.amount}</h1>
+                    <h1>${props.expense.amount.toFixed(2)}</h1>
                 </div>
             </div>
             

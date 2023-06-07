@@ -105,25 +105,25 @@ const AddExpense = (props) => {
                     <label htmlFor="title"  className="col-form-label">Title: </label>
                 </div>
                 <div className="col-7">
-                    <input type="text" id="title" value={enteredTitle} onChange={handleTitleChange} className="form-control form-control-sm" />
+                    <input type="text" id="title" value={enteredTitle} placeholder="Name of expense" onChange={handleTitleChange} className="form-control form-control-sm" />
                 </div>
                 <div className="col-4 mb-2">
                     <label htmlFor="amount" className="col-form-label">Amount: </label>
                 </div>
                 <div className="col-7">
-                    <input type="text" id="amount" value={enteredAmount} onChange={handleAmountChange} className="form-control form-control-sm" />
+                    <input type="text" id="amount" placeholder="Price of expense" value={enteredAmount} onChange={handleAmountChange} className="form-control form-control-sm" />
                 </div>
                 <div className="col-4 mb-2">
                     <label htmlFor="date" className="col-form-label">Date: </label>
                 </div>
                 <div className="col-7">
-                    <input type="date" id="date" value={enteredDate} onChange={handleDateChange} className="form-control form-control-sm" />
+                    <input type="date" id="date" placeholder="Date of expense" value={enteredDate} onChange={handleDateChange} className="form-control form-control-sm" />
                 </div>
                 <div className="col-4 mb-2">
                 <label htmlFor="exampleDataList" className="col-form-label">Category:</label>
                 </div>
                 <div className="col-7">
-                <input className="form-control form-control-sm" value={enteredCategory} onChange={handleCategoryChange} list="datalistOptions" id="exampleDataList"/>
+                <input className="form-control form-control-sm" value={enteredCategory} placeholder="Choose" onChange={handleCategoryChange} list="datalistOptions" id="exampleDataList"/>
                 <datalist id="datalistOptions">
                     <option value="Grocery"/>
                     <option value="Transportation"/>
