@@ -80,7 +80,8 @@ const MonthlySummary = (props) => {
 
 
     const options = {
-        aspectRatio: 1|2,
+        maintainAspectRatio: true,
+        aspectRatio: 1.7,
         plugins: {
           title: {
             display: true,

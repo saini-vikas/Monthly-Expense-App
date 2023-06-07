@@ -1,6 +1,17 @@
 .year-expense {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 96%;
     height: 370px;
     color: white;
     border-radius: 10px; 
+
+}
+
+@media  screen and (max-width: 850px){
+    .year-expense {
+        width: 95%;
+        height: 95% !important;
+    }
 }

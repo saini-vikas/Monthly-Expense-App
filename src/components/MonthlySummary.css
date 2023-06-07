@@ -10,3 +10,10 @@
     padding: 0 20px 0 20px;
 
 }
+
+
+@media screen and (max-width: 850px) {
+    .monthly-summary {
+        padding: 20px;
+    }
+}

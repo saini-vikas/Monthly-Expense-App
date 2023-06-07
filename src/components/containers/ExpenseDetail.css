@@ -8,12 +8,14 @@
     height: 480px;
     background-color: #f8f8f8;
     border-radius: 10px;
+    padding: 0 10px 0 10px;
 }
 
 .year-summary {
     display: flex;
     align-items: center;
     justify-content: center;
+    aspect-ratio: 1/1.2;
     flex: 30%;
     height: 400px;
     background-color: #303030;
@@ -30,3 +32,33 @@
     
 }
 
+@media screen and (max-width: 850px) {
+    .expense-detail {
+        margin-top: 10px;
+        flex-direction: column;
+        height: auto !important;
+    }
+    .year-summary {
+        width: 95%;
+        aspect-ratio: 1.5/1;
+    }
+    .complete-expense-list {
+        width: 95%;
+        height: 500px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .expense-detail {
+        width: 100%;
+        padding: 0;
+    }
+    .year-summary {
+        width: 98%;
+        padding: 10px;
+    }
+    .complete-expense-list {
+        width: 98%;
+    }
+}

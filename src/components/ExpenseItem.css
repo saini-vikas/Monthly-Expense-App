@@ -31,6 +31,7 @@
     justify-content: center;
     align-items: center;
     width: 16%;
+    min-width: 80px !important;
     border-radius: 8px;
     background-color: #9CFF2E;
     color: var(--my-shinny-green);
@@ -39,6 +40,7 @@
     margin: 8px 10px 8px 10px !important;
     font-size: 1.2em;
     color: #252525;
+    
     
 }
 
@@ -67,7 +69,13 @@
 }
 
 .title {
+    display: flex;
+    align-items: center;
+    height: 90%;
+    justify-content: center;
     color: white;
+    padding-top: 10px;
+    margin: 0 10px 0 10px;
 }
 
 .title > h2 {
@@ -102,4 +110,40 @@
 
 .icons i:hover {
     cursor: pointer;;
+}
+
+
+@media screen and (min-width: 850px) and (max-width:1150px) {
+    .expense-item {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .title > h2 {
+        font-size: 1.1em;
+    }
+    .amount {
+        width: 20%;
+    }
+    .amount > h2 { 
+        font-size: 0.8em;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .expense-item {
+        width: 100% !important;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .title > h2 {
+        font-size: 1.0em;
+    }
+    .amount > h1 {
+        font-size: 1.0em;
+    }
+    .date > h1 {
+        font-size: 1.3em;
+    }
+    
 }

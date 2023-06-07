@@ -104,25 +104,25 @@ const AddExpense = (props) => {
                 <div className="col-4 mb-2">
                     <label htmlFor="title"  className="col-form-label">Title: </label>
                 </div>
-                <div className="col-6">
+                <div className="col-7">
                     <input type="text" id="title" value={enteredTitle} onChange={handleTitleChange} className="form-control form-control-sm" />
                 </div>
                 <div className="col-4 mb-2">
                     <label htmlFor="amount" className="col-form-label">Amount: </label>
                 </div>
-                <div className="col-6">
+                <div className="col-7">
                     <input type="text" id="amount" value={enteredAmount} onChange={handleAmountChange} className="form-control form-control-sm" />
                 </div>
                 <div className="col-4 mb-2">
                     <label htmlFor="date" className="col-form-label">Date: </label>
                 </div>
-                <div className="col-6">
+                <div className="col-7">
                     <input type="date" id="date" value={enteredDate} onChange={handleDateChange} className="form-control form-control-sm" />
                 </div>
                 <div className="col-4 mb-2">
                 <label htmlFor="exampleDataList" className="col-form-label">Category:</label>
                 </div>
-                <div className="col-6">
+                <div className="col-7">
                 <input className="form-control form-control-sm" value={enteredCategory} onChange={handleCategoryChange} list="datalistOptions" id="exampleDataList"/>
                 <datalist id="datalistOptions">
                     <option value="Grocery"/>
@@ -134,10 +134,10 @@ const AddExpense = (props) => {
                     <option value="Utilities"/>
                 </datalist>
                 </div>
-                <div className="col-10 button">
+                <div className="col-12 button">
                     { id ?  (<><button className="btn btn-dark" onClick={updateSelectedExpense}>Update expense</button>
                             <button className="btn btn-dark" onClick={cancelEditExpense}>Cancel</button></> ) :
-                    <button className="btn btn-dark" onClick={handleSubmit} type="submit">Add new expense</button>}
+                    <button className="btn btn-dark btn-md" onClick={handleSubmit} type="submit">Add new expense</button>}
                 </div>
                 
                 

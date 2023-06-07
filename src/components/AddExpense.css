@@ -4,18 +4,36 @@
     justify-content: center;
     flex: 35%;
     height: 90%;
+    min-width: 320px;
     border-radius: 10px;
     background-color: #BCCEF8;
-    padding: 20px;
+    padding: 10px;
     
 }
 
+.add-expense > form {
+    margin: 10px;
+}
+
 .row {
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .button {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    
+}
+
+@media screen and (min-width: 850px) and (max-width: 950px) {
+    .add-expense {
+        flex: 30% !important;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .add-expense {
+        margin: 0 20px 0 20px;
+    }
 }
