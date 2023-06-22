@@ -1,4 +1,5 @@
 import "./MonthlySummary.css"
+import { useState, useEffect } from "react";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -19,12 +20,20 @@ ChartJS.register(
 );
 
 const MonthlySummary = (props) => {
-
+    const width = props.screenWidth;
+    const [style, setStyle] = useState({aspectRatio:2.5});
     const filterExpenses = props.expenses.filter(expense => {
         const date = new Date(expense.date);
         return date.getFullYear() == props.selectYear;
     })
-
+    useEffect(() => {
+        if (width <= 900 && width > 600) {
+            setStyle({aspectRatio: 1.5});
+        }
+        else if (width <= 600) {
+            setStyle({aspectRatio: 1.5});
+        }
+    }, [width])
 
     const monthlyData = [
         {label: 'Jan', category: {"Transportation" : 0, "Shopping": 0, "Grocery" : 0, "Entertainment" : 0, "Housing" : 0, "Utilities": 0, "Insurance":0}}, 
@@ -81,7 +90,7 @@ const MonthlySummary = (props) => {
 
     const options = {
         maintainAspectRatio: true,
-        aspectRatio: 1.7,
+        aspectRatio: style.aspectRatio,
         plugins: {
           title: {
             display: true,

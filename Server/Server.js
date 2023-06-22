@@ -2,8 +2,11 @@ const express = require("express");
 const db = require("./database");
 const cors = require("cors");
 const app = express();
+const path = require("path");
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../build")));
+console.log(path.join(__dirname, "../build"));
 
 app.use(
   cors({
@@ -11,6 +14,10 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.get("/api/data", (req, res) => {
   db.all("SELECT * FROM expenses ORDER BY date ASC", (err, rows) => {

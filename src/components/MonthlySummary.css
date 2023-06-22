@@ -1,6 +1,6 @@
 .monthly-summary {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex: 60%;
     height: 90%;
@@ -15,6 +15,7 @@
 @media screen and (max-width: 850px) {
     .monthly-summary {
         padding: 20px;
+        aspect-ratio: 1.5/1 !important;
     }
 }
 
@@ -22,6 +23,7 @@
 @media screen and (max-width: 600px) {
     .monthly-summary {
         width: 98% !important;
+        aspect-ratio: 1.4/1 !important;
         padding: 10px 5px 10px 5px;
     }
 }
